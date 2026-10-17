@@ -24,6 +24,7 @@ impl AssignmentStatus {
 }
 
 #[derive(ToSchema, Serialize, Deserialize, Clone)]
+#[serde(rename_all = "camelCase")]
 pub struct ApiManagedDomain {
     pub uuid: uuid::Uuid,
     pub provider_uuid: uuid::Uuid,
@@ -94,6 +95,7 @@ pub struct ApiGeneratedRecord {
 }
 
 #[derive(ToSchema, Serialize, Deserialize, Clone)]
+#[serde(rename_all = "camelCase")]
 pub struct ApiAssignment {
     pub uuid: uuid::Uuid,
     pub server_uuid: uuid::Uuid,
@@ -113,6 +115,7 @@ pub struct ApiAssignment {
 }
 
 #[derive(ToSchema, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct ClientAssignmentResponse {
     pub assignment: Option<ApiAssignment>,
     pub managed_domains: Vec<ApiManagedDomain>,

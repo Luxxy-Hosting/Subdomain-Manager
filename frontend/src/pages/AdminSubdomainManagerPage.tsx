@@ -1,8 +1,8 @@
 import { Group, Stack, Text } from '@mantine/core';
 import { useEffect, useMemo, useState } from 'react';
 import { httpErrorToHuman } from '@/api/axios.ts';
-import Button from '@/elements/Button.tsx';
-import Card from '@/elements/Card.tsx';
+import Button from '@/elements/buttons/Button.tsx';
+import Card from '@/elements/data-display/Card.tsx';
 import TextInput from '@/elements/input/TextInput.tsx';
 import NumberInput from '@/elements/input/NumberInput.tsx';
 import Select from '@/elements/input/Select.tsx';

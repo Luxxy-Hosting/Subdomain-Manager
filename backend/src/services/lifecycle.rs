@@ -4,7 +4,7 @@ use shared::models::{
 
 use super::manager;
 
-pub async fn register_handlers() {
+pub fn register_handlers() {
     Server::register_delete_handler(ListenerPriority::Low, |server, _options, state, _tx| {
         Box::pin(async move {
             if let Err(err) = manager::cleanup_managed_records_for_server(state, server.uuid).await {
@@ -17,8 +17,7 @@ pub async fn register_handlers() {
 
             Ok(())
         })
-    })
-    .await;
+    });
 
     Server::register_event_handler(|state, event| {
         Box::pin(async move {
@@ -62,6 +61,5 @@ pub async fn register_handlers() {
 
             Ok(())
         })
-    })
-    .await;
+    });
 }

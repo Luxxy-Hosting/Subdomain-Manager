@@ -14,7 +14,7 @@ pub struct ExtensionStruct;
 #[async_trait::async_trait]
 impl Extension for ExtensionStruct {
     async fn initialize(&mut self, _state: State) {
-        services::lifecycle::register_handlers().await;
+        services::lifecycle::register_handlers();
         tracing::info!("subdomain manager extension initialized");
     }
 
